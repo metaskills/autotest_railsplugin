@@ -1,0 +1,28 @@
+
+== Autotest::Railsplugin: Use autotest to develop your rails plugins!
+
+This is a work in progress. To date the mappings for this autotest class are working 
+very well for me. Please read the 'railsplugin.rb' file for details. The short story is 
+that default autotest does not map well to rails test naming and this class addresses 
+that.
+
+
+=== INSTALLATION
+
+* Download
+* Rename the directory to "autotest"
+* Place inside of your plugin's root directory.
+* From your plugin root, you can now use autotest.
+
+  $ autotest
+    loading autotest/railsplugin
+
+=== HELPING OUT
+
+If you find that this class is not doing what you think it should. Perhaps when you 
+save a file it does not running the corresponding test and you want me to fix it, please 
+do the following.
+
+Email the directory structure of both the library file and the test file you expected it 
+to run to ken *[at]* metaskills.net
+
