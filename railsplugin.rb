@@ -13,7 +13,7 @@ class Autotest::Railsplugin < Autotest
     add_exception %r%^\./(install|uninstall)\.rb$%
     
     # Ignore these misc files in the root of the plugin folder.
-    add_exception %r%^\./(.*LICENSE|Rakefile|README.*|CHANGELOG.*)$%
+    add_exception %r%^\./(.*LICENSE|Rakefile|README.*|CHANGELOG.*)$%i
     
     # Ignore any log file.
     add_exception %r%.*\.log$%
@@ -34,7 +34,7 @@ class Autotest::Railsplugin < Autotest
     
     # If any core test file like the helper, boot, database.yml change, then run 
     # all matching .*_test.rb files in the test directory.
-    add_mapping %r%^test/(boot|helper|test_helper)\.rb|database.yml% do
+    add_mapping %r%^test/(boot|helper|test_helper|factories)\.rb|database.yml% do
       files_matching %r%^test/.*_test\.rb$%
     end
     
