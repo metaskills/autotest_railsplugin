@@ -6,16 +6,31 @@ very well for me. Please read the 'railsplugin.rb' file for details. The short s
 that default autotest does not map well to rails test naming and this class addresses 
 that.
 
+There is Rspec support which will Just Work(TM), if you are using rspec instead of test/unit.
+The default rspec autotest settings are used.
+
 
 === INSTALLATION
 
-* Download
-* Rename the directory to "autotest"
-* Place inside of your plugin's root directory.
-* From your plugin root, you can now use autotest.
+* From your plugin root run this
+ 
+  git clone git://github.com/metaskills/autotest_railsplugin.git autotest
+
+* You can now use autotest.
 
   $ autotest
     loading autotest/railsplugin
+
+
+=== CUSTOMISATION
+
+If you need to customize the exceptions or mappings, create an .autotest file in the root
+of the plugin and place them in there. An example below of adding a custom exception
+
+  Autotest.add_hook :initialize do |at|
+    at.add_exception %r%^\./spec/dont_touch%
+  end
+
 
 === HELPING OUT
 
