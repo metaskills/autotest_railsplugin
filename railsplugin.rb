@@ -40,6 +40,14 @@ class Autotest::Railsplugin < Autotest
     
   end
   
+  def path_to_classname(s)
+    sep = File::SEPARATOR
+    f = s.sub(/^test#{sep}?/, '').sub(/\.rb$/, '').split(sep)
+    f = f.map { |path| path.split(/_/).map { |seg| seg.capitalize }.join }
+    # f = f.map { |path| path =~ /Test$/ ? path : "#{path}Test"  }
+    f.join('::')
+  end
+  
   
 end
 
