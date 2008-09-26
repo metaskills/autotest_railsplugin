@@ -4,10 +4,7 @@
 This is a work in progress. To date the mappings for this autotest class are working 
 very well for me. Please read the 'railsplugin.rb' file for details. The short story is 
 that default autotest does not map well to rails test naming and this class addresses 
-that.
-
-There is Rspec support which will Just Work(TM), if you are using rspec instead of test/unit.
-The default rspec autotest settings are used.
+that. Works for test/unit and rspec.
 
 
 === INSTALLATION
