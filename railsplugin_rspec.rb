@@ -2,9 +2,6 @@ require 'autotest/rspec'
 
 class Autotest::RailspluginRspec < Autotest::Rspec
 
-  # Rspec version which only includes exceptions as
-  # the rspec autotest class handles the usual mappings.
-
   def initialize
     super
     
@@ -22,6 +19,10 @@ class Autotest::RailspluginRspec < Autotest::Rspec
     
     # Ignore any log file.
     add_exception %r%.*\.log$%
+    
+    add_mapping %r%^spec/(boot|helper|factories)\.rb|database.yml% do
+      files_matching %r%^spec/.*_spec\.rb$%
+    end
     
   end
   
